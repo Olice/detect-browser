@@ -1,0 +1,17 @@
+{
+  "name": "detect-browser",
+  "main": "detect-browser.js",
+  "homepage": "https://github.com/Olice/detect-browser",
+  "authors": [
+    "James Power <thejamespower@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
