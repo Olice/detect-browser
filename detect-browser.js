@@ -1,10 +1,34 @@
-$(function() {
-  // http://stackoverflow.com/questions/27912296/ie11-detect-whether-compatibility-view-is-on-via-javascript
-  function trueOrFalse() {
-    return true;
-  }
+(function(){
+  // https://www.sitepoint.com/add-remove-css-class-vanilla-js/
+  var addClass = function(elements, myClass) {
 
-  function IeVersion() {
+    // if there are no elements, we're done
+    if (!elements) { return; }
+
+    // if we have a selector, get the chosen elements
+    if (typeof(elements) === 'string') {
+      elements = document.querySelectorAll(elements);
+    }
+
+    // if we have a single DOM element, make it an array to simplify behavior
+    else if (elements.tagName) { elements=[elements]; }
+
+    // add class to all chosen elements
+    for (var i=0; i<elements.length; i++) {
+
+      // if class is not already found
+      if ( (' '+elements[i].className+' ').indexOf(' '+myClass+' ') < 0 ) {
+
+        // add class
+        elements[i].className += ' ' + myClass;
+      }
+    }
+  };
+
+  var htmlEle = document.querySelectorAll('html')[0];
+
+  // http://stackoverflow.com/questions/27912296/ie11-detect-whether-compatibility-view-is-on-via-javascript
+  var IeVersion = function() {
     //Set defaults
     var value = {
       IsIE: false,
@@ -38,7 +62,7 @@ $(function() {
       value.CompatibilityMode = value.TrueVersion != value.ActingVersion;
     }
     return value;
-  }
+  };
 
   var ie = IeVersion();
 
@@ -49,17 +73,17 @@ $(function() {
 
   if (ie.ActingVersion === 10) {
     console.log('IE10 mode detected.');
-    $('html').addClass('ie10');
+    addClass(htmlEle, 'ie10');
   }
 
   if (ie.ActingVersion === 11) {
     console.log('IE11 mode detected.');
-    $('html').addClass('ie11');
+    addClass(htmlEle, 'ie11');
   }
 
   if (navigator.userAgent.match('Edge')) {
     console.log('MS Edge detected.');
-    $('html').addClass('edge');
+    addClass(htmlEle, 'edge');
   }
 
-});
+})();
