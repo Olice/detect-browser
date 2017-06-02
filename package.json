@@ -1,0 +1,24 @@
+{
+  "name": "@olice/detect-browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "detect-browser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olice/detect-browser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Olice/detect-browser/issues"
+  },
+  "homepage": "https://github.com/Olice/detect-browser#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0"
+  }
+}
